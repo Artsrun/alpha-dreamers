@@ -1,0 +1,392 @@
+:root {
+  --headerBg: #fff;
+  --headerTxt: #000;
+
+  --heroBg: #f4f7fa;
+  --heroTxt: #000;
+
+  --companiesBg: #f4f7fa;
+  --companiesTxt: #000;
+
+  --cardBg: #f4f7fa;
+  --cardTxt: #000;
+  --cardBorder: #1b1a17;
+
+  --footerBg: #002ace;
+  --footerTxt: #fff;
+
+  --decoGradient: rgb(0, 51, 255, 100);
+  --decoGradient2: rgb(0, 51, 255, 0);
+  --decoSize: 1155px;
+
+  --contentWidth: 1184px;
+  --sectionYSpacing: 56px;
+  --footerContentWidth: 1024px;
+
+  --ctoTxt: #161c2d;
+}
+
+html {
+  font-family: "Gilroy";
+}
+
+body {
+  overflow-x: hidden;
+}
+
+@font-face {
+  font-family: "Gilroy";
+  src: url("../assets/fonts/Gilroy-Bold.woff2") format("woff2"),
+    url("../assets/fonts/Gilroy-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gilroy";
+  src: url("../assets/fonts/Gilroy-Medium.woff2") format("woff2"),
+    url("../assets/fonts/Gilroy-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gilroy";
+  src: url("../assets/fonts/Gilroy-Regular.woff2") format("woff2"),
+    url("../assets/fonts/Gilroy-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gilroy";
+  src: url("../assets/fonts/Gilroy-Light.woff2") format("woff2"),
+    url("../assets/fonts/Gilroy-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+.dg_header {
+  padding: 24px 92px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dg_header_logo {
+  width: 155px;
+  height: 72px;
+  background-image: url(../assets/img/logo.svg);
+  flex-shrink: 0;
+}
+
+.dg_header_nav_start {
+  display: flex;
+  align-items: center;
+  column-gap: 48px;
+}
+
+.dg_header_nav_end {
+  display: flex;
+  align-items: center;
+  column-gap: 32px;
+}
+
+.dg_header_nav_start a,
+.dg_header_nav_end a {
+  font-family: "Gilroy";
+  font-size: 18px;
+  font-weight: 400;
+  text-decoration: none;
+  color: var(--headerTxt);
+}
+
+/*companies*/
+.dg_section_companies {
+  background-color: var(--companiesBg);
+  color: var(--companiesTxt);
+  height: 277px;
+  display: flex;
+  align-items: center;
+}
+
+.dg_section_companies_slider div {
+  display: flex;
+  align-items: center;
+  column-gap: 51px;
+}
+
+.dg_section_companies_container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/*cards*/
+.dg_section_cards,
+.dg_section_cto {
+  padding-top: var(--sectionYSpacing);
+}
+
+.dg_cards_wrapper {
+  display: flex;
+  align-items: center;
+  column-gap: 16px;
+}
+
+.dg_card {
+  border: 1px solid var(--cardBorder);
+  background-color: var(--cardBg);
+  color: var(--cardTxt);
+  border-radius: 40px;
+  height: 425px;
+}
+
+.dg_card_deco {
+  height: 210px;
+  background-image: url(../assets/img/deco/11.png);
+  background-size: 300px 200px;
+  background-position: top right;
+  background-repeat: no-repeat;
+}
+
+.dg_card_info {
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-bottom: 18px;
+}
+
+.dg_card h3 {
+  font-size: 22px;
+  height: 64px;
+  line-height: 32px;
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+
+.dg_card_descr_container {
+}
+
+.dg_card p {
+  font-size: 14px;
+  line-height: 32px;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+/*containers*/
+.dg_section_container {
+  width: var(--contentWidth);
+  margin: 0 auto;
+}
+
+.dg_section_hero {
+  padding-top: 32px;
+  padding-bottom: 56px;
+}
+
+/*hero*/
+.dg_section_hero_text {
+  font-size: 80px;
+  font-weight: 700;
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+  margin-bottom: 56px;
+}
+
+.dg_section_hero_text p {
+  height: 94px;
+  font-size: 80px;
+  font-weight: 700;
+}
+
+.dg_section_hero_text_right {
+  text-align: right;
+}
+
+.dg_deco {
+  position: absolute;
+  z-index: -1;
+  right: -480px;
+  top: -90px;
+  width: var(--decoSize);
+  height: var(--decoSize);
+  background: radial-gradient(
+    circle,
+    var(--decoGradient) 0%,
+    var(--decoGradient2) 50%
+  );
+}
+
+.dg_section_heading {
+  font-size: 48px;
+  height: 58px;
+  font-weight: 700;
+  letter-spacing: -1.8px;
+}
+
+.dg_section_cards .dg_section_heading {
+  margin-bottom: 64px;
+}
+
+/*cto*/
+.dg_section_cto_image_wrapper {
+  width: 584px;
+  height: 611px;
+  background-image: url(../assets/img/person.jpg);
+  border-radius: 48px;
+  flex-shrink: 0;
+  background-size: contain;
+}
+
+.dg_section_cto .dg_section_container {
+  display: flex;
+  align-items: center;
+  column-gap: 16px;
+}
+
+.dg_section_cto_info_wrapper {
+  flex-grow: 1;
+  min-width: 1px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+}
+
+.dg_deco_quotes {
+  background-image: url(../assets/img/quotes.png);
+  width: 100px;
+  height: 56px;
+  background-size: contain;
+  flex-shrink: 0;
+}
+
+.dg_section_cto_info_wrapper p {
+  font-size: 18px;
+  line-height: 32px;
+  font-weight: 400;
+  color: var(--ctoTxt);
+}
+
+.dg_section_cto_footer {
+  display: flex;
+  align-items: center;
+}
+
+.dg_section_cto_name_wrapper {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  min-width: 1px;
+}
+
+.dg_section_cto_name_wrapper strong {
+  font-size: 28px;
+  line-height: 32px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.dg_section_cto_name_wrapper span {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 300;
+  color: var(--ctoTxt);
+}
+
+.dg_section_cto_signatire {
+  background-image: url(../assets/img/sign.png);
+  width: 149px;
+  height: 51px;
+  background-size: contain;
+  flex-shrink: 0;
+}
+
+/*footer*/
+
+.dg_footer_wrapper {
+  background-color: var(--footerBg);
+  color: var(--footerTxt);
+  padding-top: 80px;
+  padding-bottom: 80px;
+  margin-top: 64px;
+  display: flex;
+  align-items: center;
+}
+
+.dg_footer_container {
+  width: var(--footerContentWidth);
+  flex-shrink: 0;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  column-gap: 46px;
+}
+
+.dg_footer_desc_wrapper {
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+  width: 300px;
+  flex-shrink: 0;
+}
+
+.dg_footer_desc_wrapper h3 {
+  font-size: 28px;
+  line-height: 32px;
+  font-weight: 700;
+}
+
+.dg_footer_desc_wrapper p {
+  font-size: 15px;
+  line-height: 28px;
+  font-weight: 400;
+  opacity: 0.7;
+}
+
+.dg_footer_socials_wrapper {
+  display: flex;
+  align-items: center;
+  column-gap: 24px;
+}
+
+.dg_footer_social {
+  width: 20px;
+  height: 20px;
+  background-size: contain;
+  flex-shrink: 0;
+  margin-top: 24px;
+}
+
+.dg_footer_social_twitter {
+  background-image: url(../assets/img/socials/twitter.png);
+}
+.dg_footer_social_facebook {
+  background-image: url(../assets/img/socials/facebook.png);
+}
+.dg_footer_social_instagram {
+  background-image: url(../assets/img/socials/instagram.png);
+}
+.dg_footer_social_linkedin {
+  background-image: url(../assets/img/socials/linkedin.png);
+}
+
+.dg_footer_navigation_wrapper {
+  display: flex;
+  align-items: center;
+  column-gap: 42px;
+}
+
+.dg_footer_navigation_wrapper a {
+  min-width: 100px;
+  font-size: 17px;
+  line-height: 40px;
+  font-weight: 400;
+  color: var(--footerTxt);
+  text-decoration: none;
+}
