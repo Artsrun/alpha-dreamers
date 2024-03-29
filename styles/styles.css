@@ -1,5 +1,8 @@
 :root {
   --headerBg: #fff;
+  --headerBg2: #e9e9e9;
+  --headerItemBg: #778ad5;
+  --headerItemTxt: #ffffff;
   --headerTxt: #000;
 
   --heroBg: #f4f7fa;
@@ -10,7 +13,7 @@
 
   --cardBg: #f4f7fa;
   --cardTxt: #000;
-  --cardBorder: #1b1a17;
+  --cardBorder: #e2e2e2;
 
   --footerBg: #002ace;
   --footerTxt: #fff;
@@ -26,6 +29,29 @@
   --ctoTxt: #161c2d;
 
   --titleTxt: #161c2d;
+
+  --hero_height: 94px;
+  --hero_fsz: 80px;
+  --hero_fw: 700;
+
+  --companies_fsz: 48px;
+  --companies_fw: 700;
+  --companies_height: 58px;
+
+  --dg_hero_pad_x: 0;
+  --hero_tal: right;
+
+  --footer_mar_top: 64px;
+  --footer_pad_top: 80px;
+  --footer_pad_bot: 80px;
+
+  --page_title_fsz: 80px;
+  --page_title_fw: 700;
+
+  --invest_h_fsz: 36px;
+  --invest_h_lh: 32px;
+  --invest_p_fsz: 18px;
+  --invest_p_lh: 32px;
 }
 
 html {
@@ -105,6 +131,7 @@ body {
   font-weight: 400;
   text-decoration: none;
   color: var(--headerTxt);
+  transition: all 0.3s;
 }
 
 /*companies*/
@@ -136,8 +163,8 @@ body {
 }
 
 .dg_cards_wrapper {
-  display: flex;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   column-gap: 16px;
 }
 
@@ -146,13 +173,14 @@ body {
   background-color: var(--cardBg);
   color: var(--cardTxt);
   border-radius: 40px;
+  overflow: hidden;
   height: 425px;
 }
 
 .dg_card_deco {
-  height: 210px;
+  height: 170px;
   background-image: url(../assets/img/deco/11.png);
-  background-size: 300px 200px;
+  background-size: cover;
   background-position: top right;
   background-repeat: no-repeat;
 }
@@ -190,6 +218,8 @@ body {
 .dg_section_hero {
   padding-top: 32px;
   padding-bottom: 56px;
+  padding-left: var(--dg_hero_pad_x);
+  padding-right: var(--dg_hero_pad_x);
 }
 
 /*hero*/
@@ -203,13 +233,13 @@ body {
 }
 
 .dg_section_hero_text p {
-  height: 94px;
-  font-size: 80px;
-  font-weight: 700;
+  height: var(--hero_height);
+  font-size: var(--hero_fsz);
+  font-weight: var(--herohero_fwheight);
 }
 
 .dg_section_hero_text_right {
-  text-align: right;
+  text-align: var(--hero_tal);
 }
 
 .dg_deco {
@@ -227,9 +257,9 @@ body {
 }
 
 .dg_section_heading {
-  font-size: 48px;
-  height: 58px;
-  font-weight: 700;
+  font-size: var(--companies_fsz);
+  height: var(--companies_height);
+  font-weight: var(--companies_fw);
   letter-spacing: -1.8px;
   color: var(--titleTxt);
 }
@@ -249,7 +279,8 @@ body {
 }
 
 .dg_section_cto .dg_section_container {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   align-items: center;
   column-gap: 16px;
 }
@@ -282,6 +313,10 @@ body {
   align-items: center;
 }
 
+.dg_section_cto_footer_mob {
+  display: none;
+}
+
 .dg_section_cto_name_wrapper {
   display: flex;
   flex-direction: column;
@@ -309,6 +344,7 @@ body {
   height: 51px;
   background-size: contain;
   flex-shrink: 0;
+  background-repeat: no-repeat;
 }
 
 /*footer*/
@@ -316,9 +352,9 @@ body {
 .dg_footer_wrapper {
   background-color: var(--footerBg);
   color: var(--footerTxt);
-  padding-top: 80px;
-  padding-bottom: 80px;
-  margin-top: 64px;
+  padding-top: var(--footer_pad_top);
+  padding-bottom: var(--footer_pad_bot);
+  margin-top: var(--footer_mar_top);
   display: flex;
   align-items: center;
 }
@@ -397,8 +433,8 @@ body {
 
 /*About Us / Our Story */
 .dg_page_title {
-  font-size: 80px;
-  font-weight: 700;
+  font-size: var(--page_title_fsz);
+  font-weight: var(--page_title_fw);
   display: flex;
   flex-direction: column;
   row-gap: 16px;
@@ -514,9 +550,19 @@ img {
   row-gap: 16px;
 }
 
+.dg_section_investment_container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+.dg_section_investment_container .dg_page_title {
+  margin-bottom: 0;
+}
+
 .dg_card_company {
   height: 230px;
   border-radius: 40px;
+  background-color: var(--cardBg);
   border: 1px solid var(--cardBorder);
   display: flex;
   align-items: center;
@@ -525,4 +571,409 @@ img {
 
 .dg_card_company img {
   max-width: calc(100% - 140px);
+}
+
+.dg_invest_root {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  column-gap: 16px;
+  padding-top: 40px;
+  width: var(--contentWidth);
+  margin: 0 auto;
+}
+
+.dg_invest_image_root > img {
+  border-radius: 32px;
+  overflow: hidden;
+  width: 100%;
+}
+.dg_invest_heading_root {
+  display: grid;
+  display: grid;
+  grid-template-columns: 1fr 100px;
+  margin-bottom: 40px;
+  column-gap: 100px;
+  align-items: center;
+}
+
+.dg_invest_heading_root > .dg_invest_logo {
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+}
+.dg_invest_heading_root > .dg_invest_logo img {
+  width: 100%;
+}
+.dg_invest_heading_root h3 {
+  font-weight: 700;
+  line-height: var(--invest_h_lh);
+  font-size: var(--invest_h_fsz);
+}
+.dg_invest_paragraph_root p {
+  font-weight: 400;
+  line-height: var(--invest_p_lh);
+  font-size: var(--invest_p_fsz);
+  margin-bottom: 32px;
+}
+
+/*contact*/
+.dg_contact_input_root {
+  height: 50px;
+  margin-bottom: 26px;
+}
+.dg_contact_label {
+  color: #161c2d;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 26px;
+  height: 25px;
+  margin-bottom: 7px;
+}
+.dg_contact_input_root input {
+  width: 100%;
+  outline: 0;
+  border: 0;
+  appearance: none;
+  -webkit-appearance: none;
+  height: 50px;
+  font-size: 15px;
+  border: 1px solid #e7e9ed;
+  background-color: #fff;
+  color: #161c2d;
+  border-radius: 12px;
+  padding: 0 18px;
+}
+.dg_contact_input_root input::placeholder {
+  color: #5c616c;
+}
+.dg_contact_form_root {
+  padding: 24px;
+  border-radius: 12px;
+  border: 1px solid #e7e9ed;
+}
+
+.dg_contact_submit {
+  background-color: #002ace;
+  color: #fff;
+  height: 59px;
+  border-radius: 12px;
+  font-size: 17px;
+  font-weight: 700;
+  outline: 0;
+  border: 0;
+  width: 100%;
+}
+
+/*mobile*/
+.dg_burger {
+  width: 30px;
+  height: 24px;
+  cursor: pointer;
+  right: 2rem;
+  top: 2rem;
+  z-index: 20;
+  display: none;
+  opacity: 0.9;
+}
+
+.dg_burger span {
+  width: 100%;
+  height: 4px;
+  background-color: var(--headerTxt);
+  border-radius: 6px;
+  display: block;
+  transition: background-color 0.5s ease-in-out;
+}
+
+.dg_burger span::before,
+.dg_burger span::after {
+  content: "";
+  width: 100%;
+  background-color: var(--headerTxt);
+  display: block;
+  transition: all 0.5s ease-in-out;
+  border-radius: 12px;
+  height: 4px;
+}
+
+.dg_burger span::before {
+  transform: translateY(-8px);
+}
+
+.dg_burger span::after {
+  transform: translateY(8px);
+  margin-top: -4px;
+}
+
+.dg_burger.active span {
+  background-color: transparent;
+}
+
+.dg_burger.active span::before {
+  transform: rotateZ(45deg) translateY(0);
+}
+
+.dg_burger.active span::after {
+  transform: rotateZ(-45deg) translateY(0);
+}
+@media only screen and (max-width: 900px) {
+  .dg_burger {
+    display: block;
+  }
+  :root {
+    --contentWidth: 100%;
+    --hero_height: auto;
+    --hero_fsz: 35px;
+    --hero_fw: 700;
+    --hero_tal: center;
+    --dg_hero_pad_x: 16px;
+    --companies_fsz: 35px;
+    --companies_fw: 700;
+    --hero_height: auto;
+
+    --footerContentWidth: 100%;
+    --footer_mar_top: 24px;
+    --footer_pad_top: 24px;
+    --footer_pad_bot: 24px;
+
+    --page_title_fsz: 38px;
+    --page_title_fw: 700;
+
+    --sectionYSpacing: 32px;
+  }
+  .dg_header {
+    --nav_item_mob_height: 32px;
+    --nav_item_mob_count: 4;
+    --nav_header_height: 100px;
+    position: relative;
+    height: var(--nav_header_height);
+    padding: 0 var(--dg_hero_pad_x);
+  }
+  .dg_header_nav_start,
+  .dg_header_nav_end {
+    display: none;
+    position: absolute;
+    top: var(--nav_header_height);
+    left: 0;
+    right: 0;
+  }
+  .dg_header_nav_end {
+    top: calc(
+      var(--nav_header_height) + var(--nav_item_mob_height) *
+        var(--nav_item_mob_count)
+    );
+  }
+  .dg_header_nav_start a,
+  .dg_header_nav_end a {
+    height: var(--nav_item_mob_height);
+    display: flex;
+    width: 100%;
+    padding: 0 var(--dg_hero_pad_x);
+    align-items: center;
+    justify-content: flex-start;
+    border-bottom: 1px solid var(--headerBg2);
+  }
+  .dg_header_nav_start a:hover,
+  .dg_header_nav_end a:hover {
+    background-color: var(--headerItemBg);
+    color: var(--headerItemTxt);
+  }
+  .dg_header_logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .nav_opened .dg_header_nav_start,
+  .nav_opened .dg_header_nav_end {
+    display: flex;
+    flex-direction: column;
+    background: var(--headerBg);
+  }
+  .dg_header_logo {
+    width: 115px;
+    height: 55px;
+  }
+
+  /*hero*/
+  .dg_section_hero_text p {
+    text-align: var(--hero_tal);
+  }
+  .dg_deco {
+    display: none;
+  }
+  /*companies*/
+  .dg_section_companies_container {
+    flex-direction: column;
+  }
+
+  .dg_section_cards .dg_section_heading {
+    margin-bottom: 8px;
+    text-align: center;
+  }
+  .dg_card_deco {
+    height: 150px;
+  }
+  .dg_card {
+    height: 395px;
+  }
+
+  .dg_cards_wrapper {
+    grid-template-columns: auto;
+    row-gap: 12px;
+    column-gap: 0;
+    justify-content: center;
+  }
+  .dg_section_cto .dg_section_container {
+    grid-template-columns: 1fr 200px;
+    column-gap: 8px;
+    padding-left: var(--dg_hero_pad_x);
+    padding-right: var(--dg_hero_pad_x);
+  }
+  .dg_section_cto_info_wrapper p {
+    font-size: 15px;
+    line-height: 26px;
+  }
+  .dg_cards_wrapper .dg_card {
+    max-width: 330px;
+  }
+  .dg_section_cto_image_wrapper {
+    width: 200px;
+    height: 221px;
+    border-radius: 24px;
+  }
+  .dg_deco_quotes {
+    width: 40px;
+    height: 22px;
+    background-repeat: no-repeat;
+  }
+  .dg_section_cto_footer_mob {
+    display: flex;
+    grid-row-start: 1;
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+  .dg_section_cto_footer_web {
+    display: none;
+  }
+  /*footer*/
+  .dg_footer_wrapper {
+    padding-left: var(--dg_hero_pad_x);
+    padding-right: var(--dg_hero_pad_x);
+  }
+  .dg_footer_container {
+    flex-direction: column;
+    margin: 0;
+    column-gap: 24px;
+  }
+  .dg_footer_social {
+    margin-top: 0;
+  }
+  .dg_footer_navigation_wrapper {
+    flex-direction: column;
+    column-gap: 0;
+    row-gap: 12px;
+    margin-top: 24px;
+  }
+  .dg_footer_navigation_wrapper a {
+    max-width: none;
+    min-width: auto;
+    line-height: 24px;
+  }
+  .dg_footer_socials_wrapper {
+    justify-content: center;
+  }
+  .dg_footer_desc_wrapper h3 {
+    text-align: center;
+  }
+  .dg_footer_desc_wrapper p {
+    text-align: center;
+  }
+  .dg_footer_desc_wrapper {
+    width: auto;
+  }
+
+  /*about us*/
+  .dg_section_story_container {
+    flex-direction: column;
+    column-gap: 24px;
+    padding: 0 var(--dg_hero_pad_x);
+  }
+  .dg_page_title {
+    text-align: center;
+    margin-bottom: 32px;
+  }
+  .dg_section_split_2 {
+    flex-direction: column;
+    row-gap: 12px;
+    padding-left: var(--dg_hero_pad_x);
+    padding-right: var(--dg_hero_pad_x);
+  }
+  .dg_section_split_2 > div {
+    width: 100%;
+  }
+  .dg_section_heading {
+    text-align: center;
+  }
+  .dg_section_py_m {
+    padding-top: 32px;
+  }
+  /*spartivka*/
+  .dg_section_container_cards_x4 {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 12px;
+    row-gap: 12px;
+    padding-left: var(--dg_hero_pad_x);
+    padding-right: var(--dg_hero_pad_x);
+  }
+  .dg_card_team_deco {
+    height: auto;
+  }
+  .dg_card_team_desc {
+    padding-top: 12px;
+  }
+  .dg_card_team {
+    height: 360px;
+  }
+  .dg_section_story {
+    padding-top: 32px;
+  }
+  .dg_section_heading {
+    height: auto;
+  }
+  .dg_section_container_companies_x3 {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 12px;
+    row-gap: 12px;
+    padding-left: var(--dg_hero_pad_x);
+    padding-right: var(--dg_hero_pad_x);
+  }
+
+  /*invest*/
+  .dg_section_investment_container {
+    grid-template-columns: auto;
+    align-items: center;
+    row-gap: 24px;
+    padding-left: var(--dg_hero_pad_x);
+    padding-right: var(--dg_hero_pad_x);
+  }
+
+  .dg_invest_root {
+    display: grid;
+    grid-template-columns: auto;
+    padding-left: var(--dg_hero_pad_x);
+    padding-right: var(--dg_hero_pad_x);
+  }
+  .dg_invest_root_reverse .dg_invest_start {
+    order: 1;
+  }
+  .dg_invest_root_reverse .dg_invest_end {
+    order: 2;
+  }
+  .dg_invest_heading_root > .dg_invest_logo {
+    width: 50px;
+    height: 50px;
+  }
+  .dg_invest_heading_root {
+    margin-bottom: 24px;
+  }
 }
