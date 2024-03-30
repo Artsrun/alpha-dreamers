@@ -53,6 +53,9 @@
   --invest_h_lh: 32px;
   --invest_p_fsz: 18px;
   --invest_p_lh: 32px;
+
+  --contact_title_fsz: 56px;
+  --contact_title_weight: 700;
 }
 
 html {
@@ -111,6 +114,7 @@ body {
   height: 72px;
   background-image: url(../assets/img/logo.svg);
   flex-shrink: 0;
+  background-repeat: no-repeat;
 }
 
 .dg_header_nav_start {
@@ -232,7 +236,30 @@ body {
   margin-bottom: 16px;
 }
 
-.dg_card_descr_container {
+.dg_invest_root_reverse .dg_invest_start {
+  order: 2;
+}
+.dg_invest_root_reverse .dg_invest_end {
+  order: 1;
+}
+
+.dg_contact_form_heading {
+  font-size: var(--contact_title_fsz);
+  font-weight: var(--contact_title_weight);
+  margin-bottom: 24px;
+  color: var(--titleTxt);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dg_contact_form_grid {
+  display: grid;
+  grid-template-columns: 1fr 240px;
+  column-gap: 148px;
+  padding-top: 40px;
+  width: var(--contentWidth);
+  margin: 0 auto;
 }
 
 .dg_card p {
@@ -276,7 +303,7 @@ body {
 }
 
 .dg_deco {
-  display: none;
+  /* display: none; */
   position: absolute;
   z-index: -1;
   right: -480px;
@@ -696,6 +723,41 @@ img {
   outline: 0;
   border: 0;
   width: 100%;
+  margin-top: 118px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.dg_contact_submit:hover {
+  transform: translateY(-4px);
+}
+
+.dg_contact_item {
+  margin-bottom: 50px;
+}
+
+.dg_contact_item > strong {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 34px;
+  color: #161c2d;
+  margin-bottom: 20px;
+}
+
+.dg_contact_item > p {
+  font-size: 21px;
+  font-weight: 400;
+  line-height: 32px;
+  color: #161c2d;
+}
+
+.dg_contact_item a {
+  color: #161c2d;
+  text-decoration: none;
+}
+
+.dg_contact_form_grid_end {
+  padding-top: 80px;
 }
 
 /*mobile*/
@@ -754,6 +816,16 @@ img {
   :root {
     --contentWidth: 100%;
   }
+  .dg_header_nav_start {
+    column-gap: 24px;
+  }
+  .dg_header {
+    padding: 24px 32px;
+  }
+  .dg_header_logo {
+    width: 125px;
+    height: 57px;
+  }
 }
 
 @media only screen and (max-width: 900px) {
@@ -780,6 +852,8 @@ img {
     --page_title_fw: 700;
 
     --sectionYSpacing: 32px;
+
+    --contact_title_fsz: 38px;
   }
   .dg_header {
     --nav_item_mob_height: 32px;
@@ -1015,5 +1089,24 @@ img {
   }
   .dg_invest_heading_root {
     margin-bottom: 24px;
+  }
+
+  /*contact*/
+  .dg_contact_form_grid {
+    grid-template-columns: auto;
+    column-gap: 24px;
+    padding-top: 24px;
+    margin: 0;
+    padding-left: var(--dg_hero_pad_x);
+    padding-right: var(--dg_hero_pad_x);
+  }
+  .dg_contact_submit {
+    margin-top: 24px;
+  }
+  .dg_contact_form_grid_end {
+    padding-top: 24px;
+  }
+  .dg_contact_item {
+    text-align: center;
   }
 }
