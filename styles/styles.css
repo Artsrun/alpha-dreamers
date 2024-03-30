@@ -750,6 +750,12 @@ img {
 .dg_burger.active span::after {
   transform: rotateZ(-45deg) translateY(0);
 }
+@media only screen and (max-width: 1200px) {
+  :root {
+    --contentWidth: 100%;
+  }
+}
+
 @media only screen and (max-width: 900px) {
   .dg_burger {
     display: block;
