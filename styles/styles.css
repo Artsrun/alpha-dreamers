@@ -39,6 +39,9 @@
   --companies_fw: 700;
   --companies_height: 58px;
 
+  --companies_single_fsz: 36px;
+  --companies_single_fw: 500;
+  --companies_single_height: 48px;
   --dg_hero_pad_x: 0;
   --hero_tal: right;
 
@@ -628,12 +631,100 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
+}
+
+.dg_card_company a {
+  display: block;
+  max-width: calc(100% - 64px);
 }
 
 .dg_card_company img {
-  max-width: calc(100% - 140px);
+  width: 100%;
 }
 
+/*single company*/
+.dg_company_detail_wrapper {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  column-gap: 16px;
+  padding-top: 40px;
+  width: var(--contentWidth);
+  margin: 0 auto;
+}
+
+.dg_company_detail_start {
+}
+
+.dg_company_detail_end {
+  border-radius: 48px;
+  overflow: hidden;
+}
+
+.dg_company_detail_heading_wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 32px;
+}
+
+.dg_company_detail_heading_wrapper > p {
+  font-size: var(--companies_single_fsz);
+  line-height: var(--companies_single_height);
+  font-weight: var(--companies_single_fw);
+  color: var(--titleTxt);
+}
+
+.dg_company_detail_heading_link {
+  display: block;
+  width: 134px;
+  flex-shrink: 0;
+  color: var(--titleTxt);
+}
+
+.dg_company_detail_paragraph {
+  font-size: 18px;
+  line-height: 32px;
+  font-weight: 400;
+  margin-bottom: 32px;
+}
+
+.dg_company_detail_heading_link img {
+  width: 100%;
+  height: auto;
+}
+
+.dg_company_detail_table_root {
+  width: 240px;
+}
+
+.dg_company_detail_table_row {
+  display: grid;
+  grid-template-columns: 100px 100px;
+  height: 26px;
+  column-gap: 8px;
+  margin-bottom: 8px;
+}
+
+.dg_company_detail_table_row > div:first-child {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  line-height: 26px;
+  font-weight: 500;
+  color: #091133;
+}
+
+.dg_company_detail_table_row > div:last-child {
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 400;
+  color: #5d6970;
+}
+
+/*invest start*/
 .dg_invest_root {
   display: grid;
   grid-template-columns: 50% 50%;
@@ -854,6 +945,10 @@ img {
     --sectionYSpacing: 32px;
 
     --contact_title_fsz: 38px;
+
+    --companies_single_fsz: 34px;
+    --companies_single_fw: 500;
+    --companies_single_height: 48px;
   }
   .dg_header {
     --nav_item_mob_height: 32px;
@@ -1060,6 +1155,27 @@ img {
     row-gap: 12px;
     padding-left: var(--dg_hero_pad_x);
     padding-right: var(--dg_hero_pad_x);
+  }
+
+  .dg_company_detail_wrapper {
+    grid-template-columns: auto;
+    align-items: center;
+    row-gap: 24px;
+    padding-left: var(--dg_hero_pad_x);
+    padding-right: var(--dg_hero_pad_x);
+  }
+
+  .dg_company_detail_table_root {
+    width: 100%;
+  }
+
+  .dg_company_detail_table_row {
+    grid-template-columns: 1fr 1fr;
+    height: 32px;
+  }
+
+  .dg_company_detail_table_row > div:first-child {
+    justify-content: flex-end;
   }
 
   /*invest*/
