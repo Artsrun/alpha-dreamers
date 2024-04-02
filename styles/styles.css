@@ -946,6 +946,9 @@ img {
 }
 
 @media only screen and (max-width: 900px) {
+  .dg_section_owl-dots{
+    transform: translateX(0);
+  }
   .dg_burger {
     display: block;
   }
@@ -1297,6 +1300,17 @@ img {
     text-align: center;
   }
 }
+
+
+
+
+
+
+
+
+
+
+
 
 
 /**

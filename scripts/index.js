@@ -12,7 +12,5 @@ $(document).ready(function ($) {
     dots: true,
     center: true,
     dotsContainer: '.dg_section_owl-dots'
-  
-
 })
 });
