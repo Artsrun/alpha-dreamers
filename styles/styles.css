@@ -61,13 +61,7 @@
   --contact_title_weight: 700;
 }
 
-html {
-  font-family: "Gilroy";
-}
 
-body {
-  overflow-x: hidden;
-}
 
 @font-face {
   font-family: "Gilroy";
@@ -103,6 +97,16 @@ body {
   font-weight: 300;
   font-style: normal;
   font-display: swap;
+}
+
+html {
+  font-family: "Gilroy";
+  height: 100%;
+}
+
+body {
+  overflow-x: hidden;
+  min-height: 100%;
 }
 
 .dg_header {
@@ -187,7 +191,8 @@ body {
   margin: 0 40px;
   position: relative;
 }
-.dg_section_owl-dots{
+
+.dg_section_owl-dots {
   position: absolute;
   bottom: -40px;
   left: 0;
@@ -365,13 +370,13 @@ body {
   min-width: 1px;
   display: flex;
   flex-direction: column;
-  row-gap: 16px;
+  row-gap: 32px;
 }
 
 .dg_deco_quotes {
   background-image: url(../assets/img/quotes.png);
-  width: 100px;
-  height: 56px;
+  width: 86px;
+  height: 47px;
   background-size: contain;
   flex-shrink: 0;
 }
@@ -636,6 +641,7 @@ img {
 
 .dg_section_investment_container .dg_page_title {
   margin-bottom: 0;
+  text-align: center;
 }
 
 .dg_card_company {
@@ -946,9 +952,10 @@ img {
 }
 
 @media only screen and (max-width: 900px) {
-  .dg_section_owl-dots{
+  .dg_section_owl-dots {
     transform: translateX(0);
   }
+
   .dg_burger {
     display: block;
   }
@@ -1036,6 +1043,10 @@ img {
   .dg_header_logo {
     width: 115px;
     height: 55px;
+  }
+
+  .dg_section {
+    flex: auto;
   }
 
   /*hero*/
