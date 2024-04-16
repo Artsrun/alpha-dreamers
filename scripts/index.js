@@ -1,16 +1,32 @@
-$(document).ready(function ($) {
-  // Burger menu
-  $(".dg_burger").on("click", function () {
-    $(this).toggleClass("active");
-    $(".dg_header").toggleClass("nav_opened");
+document.addEventListener('DOMContentLoaded', function () {
+  /** Burger btn */
+  document.querySelector(".dg_burger").addEventListener("click", function () {
+    document.querySelector(".dg_nav").classList.toggle("active");
   });
 
-  $('.owl-carousel').owlCarousel({
-    loop:true,
-    margin:50,
-    autoWidth:true,
-    dots: true,
-    center: true,
-    dotsContainer: '.dg_section_owl-dots'
-})
+  /**tiny slider */
+  var slider = tns({
+    "container": '#dg__slider_wrapper',
+    "items": 4,
+    "fixedWidth": 154,
+    "gutter": 51,
+    "navPosition": 'bottom',
+    "loop": true, // Enable infinite carousel
+    "autoplay": true, // Enable autoplay
+    "controls": false, // Disable default navigation arrows
+    "swipeAngle": false,
+    "autoplayButtonOutput": false,
+    "autoplayButton": false,
+    "speed": 400,
+    "responsive": {
+      600: {
+        items: 2
+      },
+      900: {
+        items: 3
+      }
+    }
+  });
+  /**tiny slider*/
+
 });
