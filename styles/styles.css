@@ -1360,3 +1360,17 @@ img {
     text-align: center;
   }
 }
+
+.dg_deco_star {
+  --decoSize: 35px;
+  --right: calc(((100vw - var(--contentWidth)) / 2) - var(--decoSize));
+    background-image: url(../assets/img/star.png);
+    position: absolute;
+    z-index: 10;
+    right: var(--right);
+    top: 340px;
+    width: var(--decoSize);
+    height: var(--decoSize);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
